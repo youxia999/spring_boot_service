@@ -1,0 +1,55 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+server:
+  port: 8762
+  error:
+    whitelabel:
+      enabled: false
+  filepath: D:\Java\java_workspace\spring_security_oauth2\loginresourceserver\target\classes\public\
+
+spring:
+  application:
+    name: resourceserver
+  datasource:
+    druid:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://10.2.1.53:3306/spring-cloud-auth2-db?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8
+      username: root
+      password: 123456
+      filters: stat,wall
+      initial-size: 5
+      max-active: 30
+      max-pool-prepared-statement-per-connection-size: 50
+      max-wait: 60000
+      min-evictable-idle-time-millis: 300000
+      min-idle: 5
+      pool-prepared-statements: true
+      test-on-borrow: false
+      test-on-return: false
+      test-while-idle: true
+      time-between-eviction-runs-millis: 60000
+      use-global-data-source-stat: true
+      connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+      validation-query: SELECT 1 FROM DUAL
+  #自定义error需要
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    cache: false
+
+security:
+  oauth2:
+    resource:
+      user-info-uri: http://127.0.0.1:8763/users/current
+    client:
+      id: client_2
+      client-secret: 123456
+      access-token-uri: http://127.0.0.1:8763/oauth/token
+      grant-type: client_credentials,password
+      scope: server
+
+mybatis:
+  mapper-locations: mapper/*.xml

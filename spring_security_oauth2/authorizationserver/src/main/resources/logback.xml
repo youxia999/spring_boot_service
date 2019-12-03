@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+        <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+
+            <encoder>
+                <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %highlight(%-5level) [%thread] %cyan(%logger) - %msg%n</pattern>
+            </encoder>
+        </appender>
+    <appender name="File" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>/data/auth/info.log</File>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] %logger - %msg%n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>/data/auth/info.log.%d{yyyy-MM-dd}.log</fileNamePattern>
+        </rollingPolicy>
+    </appender>
+    <logger name="com" level="INFO">
+        <appender-ref ref="File"/>
+    </logger>
+    <logger name="org.eclipse.jetty" level="INFO">
+        <appender-ref ref="File"/>
+    </logger>
+    <logger name="org.apache.http" level="INFO">
+        <appender-ref ref="File"/>
+    </logger>
+    <root level="DEBUG">
+        <appender-ref ref="File" />
+        <appender-ref ref="STDOUT"/>
+
+    </root>
+</configuration>

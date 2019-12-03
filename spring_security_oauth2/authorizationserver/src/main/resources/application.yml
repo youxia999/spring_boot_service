@@ -1,0 +1,64 @@
+spring:
+  application:
+    name: authorizationserver
+  datasource:
+    druid:
+      url: jdbc:mysql://10.2.1.53:3306/spring-cloud-auth2-db?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&useSSL=false
+      driver-class-name: com.mysql.jdbc.Driver
+      username: root
+      password: 123456
+      filters: stat,wall
+      initial-size: 5
+      max-active: 30
+      max-pool-prepared-statement-per-connection-size: 50
+      max-wait: 60000
+      min-evictable-idle-time-millis: 300000
+      min-idle: 5
+      pool-prepared-statements: true
+      test-on-borrow: false
+      test-on-return: false
+      test-while-idle: true
+      time-between-eviction-runs-millis: 60000
+      use-global-data-source-stat: true
+      connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+      validation-query: SELECT 1 FROM DUAL
+  redis:
+    host: 10.2.1.53
+    database: 0
+    port: 6379
+    maxIdle: 100
+    maxActive: 300
+    maxWait: 1000
+    testOnBorrow: true
+    timeout: 100000
+    expireTime:
+      tenminiute: 600
+      halfhour: 1800
+      hour: 3600
+      day: 86400
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    cache: false
+
+mybatis:
+  mapper-locations: mapper/*.xml
+
+server:
+  port: 8763
+  error:
+     whitelabel:
+        enabled: false
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka/
+security:
+  oauth2:
+    client:
+      id: client_2
+      client-secret: 123456
+      grant-type: client_credentials,password
+      scope: server
+#logging.level.org.springframework.security: DEBUG
+

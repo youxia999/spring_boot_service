@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.youxia.authsever.mapper.UserMapper">
+    <select id="findByUsername" resultType="com.youxia.authsever.entity.User" parameterType="java.lang.String">
+        select * from user where username=#{memberId,jdbcType=VARCHAR}
+    </select>
+    <select id="save" resultType="com.youxia.authsever.entity.User" parameterType="com.youxia.authsever.entity.User">
+        insert into user(username,password) values (#{username,jdbcType=VARCHAR},#{password,jdbcType=VARCHAR})
+    </select>
+</mapper>
