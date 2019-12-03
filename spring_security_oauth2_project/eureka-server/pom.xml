@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.youxia</groupId>
+    <groupId>com.youxia.springboot</groupId>
     <artifactId>eureka-server</artifactId>
     <version>1.0.0.RELEASE</version>
     <packaging>jar</packaging>
@@ -12,7 +12,7 @@
     <description>Demo project for Spring Boot</description>
 
     <parent>
-        <groupId>com.youxia</groupId>
+        <groupId>com.youxia.springboot</groupId>
         <artifactId>spring_security_oauth2_project</artifactId>
         <version>1.0.0.RELEASE</version>
     </parent>
