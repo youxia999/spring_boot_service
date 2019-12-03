@@ -19,7 +19,7 @@
     <module>google_grpc_project</module>
     <module>facebook_thrift_project</module>
     <module>spring_cloud_project</module>
-    <module>spring_security_oauth2</module>
+    <module>spring_security_oauth2_project</module>
   </modules>
 
   <name>spring_boot_service</name>
