@@ -13,7 +13,7 @@
 
 	<parent>
 		<groupId>com.youxia</groupId>
-		<artifactId>spring_security_oauth2</artifactId>
+		<artifactId>spring_security_oauth2_project</artifactId>
 		<version>1.0.0.RELEASE</version>
 	</parent>
 
@@ -21,7 +21,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
-		<spring-cloud.version>Finchley.SR3</spring-cloud.version>
+		<spring-cloud.version>Finchley.SR4</spring-cloud.version>
 	</properties>
 
 	<dependencies>
