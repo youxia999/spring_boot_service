@@ -1,0 +1,10 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.128.129:8761/eureka/
+
+words: 你,我,他
+
+server:
+  address: 192.168.128.129
+  port: 8104

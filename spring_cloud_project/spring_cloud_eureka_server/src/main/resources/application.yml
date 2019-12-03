@@ -1,0 +1,7 @@
+server:
+  address: 192.168.128.129
+  port: 8761
+
+spring:
+  application:
+    name: spring_cloud_eureka_server

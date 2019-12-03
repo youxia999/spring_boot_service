@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.youxia.userinfo.mapper.UserBaseInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.youxia.userinfo.model.UserBaseInfo" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="user_name" property="userName" jdbcType="VARCHAR" />
+    <result column="user_phone" property="userPhone" jdbcType="VARCHAR" />
+    <result column="user_job" property="userJob" jdbcType="VARCHAR" />
+    <result column="user_salary" property="userSalary" jdbcType="DECIMAL" />
+    <result column="user_address" property="userAddress" jdbcType="VARCHAR" />
+    <result column="user_age" property="userAge" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="modify_time" property="modifyTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <insert id="insertUserInfo" parameterType="com.youxia.userinfo.model.UserBaseInfo">
+    insert into  user_base_info (user_name,user_phone,user_job,user_salary,user_address,user_age,create_time,modify_time)
+    values (
+    #{userName,jdbcType=VARCHAR},#{userPhone,jdbcType=VARCHAR},#{userJob,jdbcType=VARCHAR},
+    #{userSalary,jdbcType=VARCHAR},#{userAddress,jdbcType=VARCHAR},#{userAge,jdbcType=INTEGER},now(),now()
+    )
+  </insert>
+</mapper>

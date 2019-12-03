@@ -1,0 +1,7 @@
+spring:
+  grpc:
+    address: 10.3.20.57
+    port: 50051
+server:
+  port: 50052
+  address: 10.3.20.57

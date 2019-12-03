@@ -1,0 +1,8 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.128.129:8761/eureka/
+
+server:
+  address: 192.168.128.129
+  port: 8101

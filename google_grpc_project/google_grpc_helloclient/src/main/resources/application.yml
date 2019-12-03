@@ -1,0 +1,8 @@
+remote:
+    greeterservice:
+      ip: 10.3.20.57
+      port: 50051
+server:
+  address: 10.3.20.57
+  port: 8081
+
